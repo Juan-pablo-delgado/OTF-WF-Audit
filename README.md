@@ -108,3 +108,4 @@ This code is designed to audit workflows in HubSpot, offering users recommendati
 7. After completion, access the presentation file, update the links, verify the accuracy of the information, download a copy, and make necessary adjustments based on the client’s requirements.
 
 ## Limitations
+The HubSpot workflow API is currently in beta, which may result in certain data being unavailable. In such cases, manual entry of the field is required.
