@@ -96,13 +96,16 @@ df['Issues?'] = df.apply(lambda row: is_issue(row['Current issues']), axis=1)
 df['Recommended Action'] = df.apply(lambda row: recommended_action(row['Current issues'],row['On or Off'],row['Enrolled last 7-days'],row['Last action on'],row['Enrolled total']), axis=1)
 df['Recommendation'] = df.apply(lambda row: recommendation(row['Recommended Action'],row['Issues?']), axis=1)
 df['Re-enrollment'] = df.apply(lambda row: re_enrollment(row['Flow ID']), axis=1)
+df['Month'] = pd.to_datetime(df['Created on']).dt.strftime('%B %Y')
+df['Issue type'] = '-'
+df['Issue details'] = '-'
 
 # Crear las columnas del Audit
 
-desired_columns = ['Workflow Name','Folder Name','ON/OFF', 'Created in',
+desired_columns = ['Workflow Name','Folder Name','ON/OFF','Created by', 'Created on','Month',
                    'Object type', 'Trigger Type', 'Enrolled total',
-                   'Enrolled last 7-days','Enrolled unique', 'Last action on',
-                   'Re-enrollment','Description', 'Issues?',
+                   'Enrolled last 7-days','Last action on',
+                   'Re-enrollment','Description','Issue type','Issue details', 'Issues?',
                    'Recommendation', 'Recommended Action']
 
 audit_df = df[desired_columns]
