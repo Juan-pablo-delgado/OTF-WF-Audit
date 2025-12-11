@@ -105,7 +105,7 @@ df['Issue details'] = '-'
 desired_columns = ['Workflow Name','Folder Name','ON/OFF','Created by', 'Created on','Month',
                    'Object type', 'Trigger Type', 'Enrolled total',
                    'Enrolled last 7-days','Last action on',
-                   'Re-enrollment','Description','Issue type','Issue details', 'Issues?',
+                   'Re-enrollment','Description','Issues?', 'Issue type','Issue details',
                    'Recommendation', 'Recommended Action']
 
 audit_df = df[desired_columns]
